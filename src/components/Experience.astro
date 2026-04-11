@@ -1,0 +1,133 @@
+---
+import { experience } from '../data/experience';
+---
+
+<section id="experience">
+  <h2>Experience</h2>
+  <div class="timeline">
+    {
+      experience.map((role, i) => (
+        <div class:list={['role', { first: i === 0 }]}>
+          <div class="role-header">
+            <img
+              src={role.logoSrc}
+              alt={role.company}
+              class:list={['logo', { 'logo-photo': role.logoSrc.includes('independent') }]}
+            />
+            <div class="role-info">
+              <div class="role-top">
+                <h3>{role.company}</h3>
+                <span class="dates">{role.dates}</span>
+              </div>
+              <span class="role-title">{role.title}</span>
+            </div>
+          </div>
+          <p class="blurb">{role.blurb}</p>
+        </div>
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  section {
+    max-width: 560px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+
+  h2 {
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-family: var(--font-sans);
+    color: var(--text-muted);
+    margin-bottom: 28px;
+  }
+
+  .role {
+    margin-bottom: 32px;
+    padding-left: 20px;
+    border-left: 2px solid var(--border);
+  }
+
+  .role:last-child {
+    margin-bottom: 0;
+  }
+
+  .role.first {
+    border-left-color: var(--border-accent);
+  }
+
+  .role-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 4px;
+  }
+
+  .logo {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    background: var(--border);
+    border: 1px solid var(--border-accent);
+    flex-shrink: 0;
+    object-fit: contain;
+  }
+
+  .logo-photo {
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 50%;
+  }
+
+  .role-info {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .role-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  h3 {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+  }
+
+  .dates {
+    font-family: var(--font-sans);
+    font-size: 12px;
+    color: var(--text-dim);
+    white-space: nowrap;
+  }
+
+  .role-title {
+    font-family: var(--font-sans);
+    font-size: 13px;
+    color: var(--text-dim);
+  }
+
+  .blurb {
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--text-body);
+  }
+
+  @media (max-width: 480px) {
+    .role-top {
+      flex-direction: column;
+      gap: 2px;
+    }
+  }
+</style>

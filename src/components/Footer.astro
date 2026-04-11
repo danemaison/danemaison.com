@@ -1,0 +1,58 @@
+---
+const socials = [
+  { label: 'GitHub', href: 'https://github.com/danemaison' },
+  { label: 'LinkedIn', href: 'https://linkedin.com/in/dane-maison' },
+  { label: 'danemaison@gmail.com', href: 'mailto:danemaison@gmail.com' },
+];
+---
+
+<footer id="contact">
+  <p class="interests">Also into photography, guitar, pottery, and cooking.</p>
+  <div class="socials">
+    {
+      socials.map((s, i) => (
+        <>
+          <a href={s.href} target="_blank" rel="noopener noreferrer">
+            {s.label}
+          </a>
+          {i < socials.length - 1 && <span class="dot">&middot;</span>}
+        </>
+      ))
+    }
+  </div>
+</footer>
+
+<style>
+  footer {
+    text-align: center;
+    padding: 40px 20px 56px;
+  }
+
+  .interests {
+    font-size: 14px;
+    color: var(--text-dim);
+    font-family: var(--font-sans);
+    margin-bottom: 12px;
+  }
+
+  .socials {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .socials a {
+    font-family: var(--font-sans);
+    font-size: 13px;
+    color: var(--text-muted);
+    transition: color 0.2s;
+  }
+
+  .socials a:hover {
+    color: var(--text-primary);
+  }
+
+  .dot {
+    color: var(--border-accent);
+  }
+</style>

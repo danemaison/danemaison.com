@@ -1,0 +1,57 @@
+---
+const links = [
+  { label: 'About', href: '#about' },
+  { label: 'Experience', href: '#experience' },
+  { label: 'Skills', href: '#skills' },
+  { label: 'Education', href: '#education' },
+  { label: 'Contact', href: '#contact' },
+];
+---
+
+<nav>
+  <a href="#" class="name">Dane Maison</a>
+  {links.map((link) => <a href={link.href}>{link.label}</a>)}
+</nav>
+
+<style>
+  nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    padding: 16px 20px;
+    font-family: var(--font-sans);
+    font-size: 13px;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    background: var(--nav-bg);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 10;
+  }
+
+  .name {
+    color: var(--text-primary);
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  a {
+    color: var(--text-muted);
+    transition: color 0.2s;
+  }
+
+  a:hover {
+    color: var(--text-primary);
+  }
+
+  @media (max-width: 480px) {
+    nav {
+      gap: 16px;
+      font-size: 12px;
+      flex-wrap: wrap;
+    }
+  }
+</style>
