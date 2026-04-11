@@ -1,5 +1,6 @@
 ---
 import { experience } from '../data/experience';
+const base = import.meta.env.BASE_URL;
 ---
 
 <section id="experience">
@@ -10,7 +11,7 @@ import { experience } from '../data/experience';
         <div class:list={['role', { first: i === 0 }]}>
           <div class="role-header">
             <img
-              src={role.logoSrc}
+              src={`${base}${role.logoSrc.replace(/^\//, '')}`}
               alt={role.company}
               class:list={['logo', { 'logo-photo': role.logoSrc.includes('independent') }]}
             />
