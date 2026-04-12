@@ -5,27 +5,35 @@ export interface SkillGroup {
 
 export const skills: SkillGroup[] = [
   {
-    category: 'Languages',
-    items: ['TypeScript', 'JavaScript', 'Python', 'SQL', 'HTML', 'CSS'],
+    category: "Languages",
+    items: ["TypeScript", "JavaScript", "Python", "SQL", "HTML", "CSS"],
   },
   {
-    category: 'Frameworks',
-    items: ['React', 'React Native', 'Vue', 'Node', 'Express', 'Flask', 'Django'],
-  },
-  {
-    category: 'Tools & Infra',
+    category: "Frameworks",
     items: [
-      'Git',
-      'GitHub Actions',
-      'Playwright',
-      'Webpack',
-      'REST APIs',
-      'Chrome Extensions',
-      'Linear',
+      "React",
+      "React Native",
+      "Vue",
+      "Node",
+      "Express",
+      "Flask",
+      "Django",
     ],
   },
   {
-    category: 'Design & AI',
-    items: ['Figma', 'Claude Code', 'Cursor', 'ChatGPT'],
+    category: "Tools & Infra",
+    items: [
+      "Git",
+      "Webpack",
+      "Playwright",
+      "REST APIs",
+      "Linear",
+      "GitHub Actions",
+      "Chrome Extensions",
+    ],
+  },
+  {
+    category: "Design & AI",
+    items: ["Claude Code", "Cursor", "ChatGPT", "Figma"],
   },
 ];
