@@ -1,4 +1,12 @@
 :root {
+  --font-serif: Georgia, 'Times New Roman', serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif;
+}
+
+/* Dark theme (default) */
+:root,
+[data-theme='dark'] {
   --bg: #141211;
   --surface: #1e1c1a;
   --border: #2a2622;
@@ -8,10 +16,19 @@
   --text-muted: #7a7269;
   --text-dim: #5a5247;
   --nav-bg: rgba(20, 18, 17, 0.92);
+}
 
-  --font-serif: Georgia, 'Times New Roman', serif;
-  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
-    Arial, sans-serif;
+/* Light theme */
+[data-theme='light'] {
+  --bg: #faf7f2;
+  --surface: #f0ebe4;
+  --border: #e0d8ce;
+  --border-accent: #c8bfb3;
+  --text-primary: #2a2420;
+  --text-body: #5a5247;
+  --text-muted: #7a7269;
+  --text-dim: #9a9088;
+  --nav-bg: rgba(250, 247, 242, 0.92);
 }
 
 *,
@@ -29,6 +46,7 @@ html {
 body {
   background: var(--bg);
   color: var(--text-body);
+  transition: background-color 0.3s, color 0.3s;
   font-family: var(--font-serif);
   font-size: 16px;
   line-height: 1.7;
