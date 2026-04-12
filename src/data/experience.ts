@@ -12,7 +12,7 @@ export const experience: Role[] = [
     title: 'Senior Software Engineer',
     dates: 'Oct 2023 – Present',
     blurb:
-      'Leading development on a white-label loyalty platform at a Series B fintech startup. Delivered cashback extensions for Citi, RBC, HP, and Acorns serving 6M+ users and driving $15M+ in annualized revenue. Re-architected the delivery pipeline to cut ship times by 90% and built a DSL-driven extension system that ships behavior changes without releases.',
+      'Leading development on a white-label loyalty platform at a Series B fintech startup. Delivered cashback extensions for Citi, RBC, HP, and Acorns serving 2M+ users and driving $10M+ in annualized revenue. Re-architected the delivery pipeline to cut ship times by 90% and built a DSL-driven extension system that ships behavior changes without releases.',
     logoSrc: '/images/logos/wildfire.png',
   },
   {
