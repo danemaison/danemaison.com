@@ -1,7 +1,7 @@
 :root {
   --font-serif: Georgia, 'Times New Roman', serif;
-  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
-    Arial, sans-serif;
+  --font-sans: 'IBM Plex Mono', monospace;
+  --font-mono: 'IBM Plex Mono', monospace;
 }
 
 /* Dark theme (default) */
@@ -47,7 +47,7 @@ body {
   background: var(--bg);
   color: var(--text-body);
   transition: background-color 0.3s, color 0.3s;
-  font-family: var(--font-serif);
+  font-family: var(--font-mono);
   font-size: 16px;
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;

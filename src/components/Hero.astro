@@ -9,7 +9,16 @@ const socials = [
 <section class="hero">
   <img src={`/images/headshot.jpg`} alt="Dane Maison" class="photo" />
   <h1>Dane Maison</h1>
-  <p class="title">Software Engineer</p>
+  <p class="title">
+    <span class="rotating-text">
+      <span class="placeholder" aria-hidden="true">Passionate Creative 🎨</span>
+      <span class="word" style="--i:0">Software Engineer 💻</span>
+      <span class="word" style="--i:1">Hobby Collector 🧠</span>
+      <span class="word" style="--i:2">Photographer 📸</span>
+      <span class="word" style="--i:3">Cat Dad 😻</span>
+      <span class="word" style="--i:4">Passionate Creative 🎨</span>
+    </span>
+  </p>
   <div class="socials">
     {
       socials.map((s, i) => (
@@ -31,8 +40,8 @@ const socials = [
   }
 
   .photo {
-    width: 175px;
-    height: 175px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     object-fit: cover;
     object-position: center top;
@@ -54,6 +63,37 @@ const socials = [
     font-family: var(--font-sans);
     font-size: 18px;
     margin-bottom: 20px;
+  }
+
+  .rotating-text {
+    position: relative;
+    display: block;
+    perspective: 500px;
+  }
+
+  .placeholder {
+    visibility: hidden;
+    white-space: nowrap;
+  }
+
+  .word {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    opacity: 0;
+    transform: translateX(-50%) rotateX(90deg);
+    animation: wordRotate 15s infinite;
+    animation-delay: calc(var(--i) * 3s);
+    white-space: nowrap;
+  }
+
+  @keyframes wordRotate {
+    0%     { opacity: 0; transform: translateX(-50%) rotateX(90deg); animation-timing-function: cubic-bezier(0.2, 0, 0.2, 1); }
+    2.5%   { opacity: 1; transform: translateX(-50%) rotateX(0deg); }
+    17%    { opacity: 1; transform: translateX(-50%) rotateX(0deg); animation-timing-function: cubic-bezier(0.8, 0, 1, 1); }
+    20%    { opacity: 0; transform: translateX(-50%) rotateX(-90deg); }
+    20.01% { opacity: 0; transform: translateX(-50%) rotateX(90deg); }
+    100%   { opacity: 0; transform: translateX(-50%) rotateX(90deg); }
   }
 
   .socials {
