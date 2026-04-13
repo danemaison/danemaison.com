@@ -47,8 +47,14 @@ import { education } from '../data/education';
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    flex-wrap: wrap;
     gap: 8px;
+  }
+
+  @media (max-width: 480px) {
+    .entry {
+      flex-direction: column;
+      gap: 2px;
+    }
   }
 
   .entry-info {

@@ -6,7 +6,7 @@ export interface EducationEntry {
 
 export const education: EducationEntry[] = [
   {
-    school: 'Learning Fuze',
+    school: 'LearningFuze',
     degree: 'Full-Stack Web Development Bootcamp, 550+ hours',
     dates: '2019',
   },
